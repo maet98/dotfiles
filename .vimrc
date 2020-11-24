@@ -3,7 +3,6 @@ filetype off                  " required
 set nocompatible
 set exrc
 set mouse=a
-filetype plugin on
 syntax on
 set termguicolors
 set t_Co=256
