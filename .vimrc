@@ -1,36 +1,19 @@
-set compatible              " be iMproved, required
-filetype off                  " required
-set nocompatible
-set exrc
-set mouse=a
+filetype plugin indent on
 syntax on
-set termguicolors
-set t_Co=256
-
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set clipboard=unnamedplus
-set smarttab
-set smartcase
-set autoindent
-set expandtab
-set smartindent
-set cindent
-set laststatus=2
-set undodir=~/.vim/undodir
-set undofile
-set showcmd
-set number
-set autowrite
-set autoread
-set incsearch
+set backspace=indent,eol,start
 set relativenumber
-set nowrap
+set hidden
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4 
+set autoindent
+set smartindent
+set expandtab
+
+let $RC="$HOME/.vimrc"
 
 
 call plug#begin('~/.vim/plugged')
-
 " let Vundle manage Vundle, required
 
 " React Native code snippets
@@ -61,27 +44,15 @@ Plug 'morhetz/gruvbox'
 Plug 'leafgarland/typescript.vim'
 Plug 'mbbill/undotree'
 
-" All of your Plugins must be added before the following line
-call plug#end()            " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()            
 let mapleader = " "
 
 nmap <leader>h :wincmd h<CR>
 nmap <leader>j :wincmd j<CR>
 nmap <leader>k :wincmd k<CR>
 nmap <leader>l :wincmd l<CR>
+noremap <leader>a ggVG<CR>
 nmap <leader>n :NERDTreeToggle<CR>
-nmap <C-a> ggVG
 
 if (has("termguicolors"))
  set termguicolors
@@ -110,18 +81,12 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" if hidden is not set, TextEdit might fail.
-set hidden
-
-
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
 
-
 " Better display for messages
 set cmdheight=2
-
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
@@ -129,10 +94,8 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-
 " always show signcolumns
 set signcolumn=yes
-
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -148,8 +111,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -215,16 +176,6 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-
-
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
@@ -234,29 +185,18 @@ nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
-
-
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
-
-
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 
-
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-
-
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-
-
-" Using CocList
 
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
@@ -285,7 +225,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
-vnoremap <C-c> "+y
-map <C-p> "+p
-map <leader>c :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp -o %:r<CR>
+vnoremap <leader>c "+y
+map <leader>p "+p
+map <leader>v :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp -o %:r<CR>
 map <leader>r :<C-U>!./%:r<CR>
