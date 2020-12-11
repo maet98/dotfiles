@@ -143,8 +143,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export aws_access_key_id=ASIA2YTZN5J6B544RPNH
-export aws_secret_access_key=cZnNhgajkVv4dAaQuYbfG+EwD7r9qffn/hQKTXjz
+export AWS_ACCESS=ASIA2YTZN5J6B544RPNH
+export AWS_SECRET=cZnNhgajkVv4dAaQuYbfG+EwD7r9qffn/hQKTXjz
 
 if [ -z "$STARTEDFISH" ];
 then

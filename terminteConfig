@@ -1,0 +1,6 @@
+[options]
+font = roboto mono 14
+
+[colors]
+foreground = #dcdccc
+background = rgba(63, 63, 63, 0.7)
