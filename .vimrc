@@ -5,6 +5,7 @@ set relativenumber
 set hidden
 set shiftwidth=4
 set tabstop=4
+set laststatus=2
 set softtabstop=4 
 set autoindent
 set smartindent
@@ -52,7 +53,7 @@ nmap <leader>j :wincmd j<CR>
 nmap <leader>k :wincmd k<CR>
 nmap <leader>l :wincmd l<CR>
 noremap <leader>a ggVG<CR>
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>n :Ntree<CR>
 
 if (has("termguicolors"))
  set termguicolors
