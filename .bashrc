@@ -146,9 +146,17 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export AWS_ACCESS=ASIA2YTZN5J6B544RPNH
 export AWS_SECRET=cZnNhgajkVv4dAaQuYbfG+EwD7r9qffn/hQKTXjz
 
-if [ -z "$STARTEDFISH" ];
-then
-    export STARTEDFISH=1;
-    exec fish;
-    exit;
-fi
+
+#eval "$(starship init bash)"
+
+#if [ -z "$STARTEDFISH" ];
+#then
+#    export STARTEDFISH=1;
+#    exec fish;
+#    exit;
+#fi
+
+alias flutter='~/dev/flutter/bin/flutter'
+alias cf='cd /opt/coldfusion11/cfusion/'
+alias tmux="TERM=screen-256color-bce tmux"
+alias SCF="sudo /opt/coldfusion11/cfusion/bin/coldfusion start"

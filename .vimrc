@@ -1,6 +1,7 @@
 filetype plugin indent on
 syntax on
 set backspace=indent,eol,start
+set clipboard=unnamedplus
 set relativenumber
 set hidden
 set shiftwidth=4
@@ -22,8 +23,11 @@ Plug 'morgsmccauley/vim-react-native-snippets'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+Plug 'fuhrysteve/jedi-vim'
+Plug 'tomlion/vim-solidity'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'preservim/nerdtree'
 
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -32,7 +36,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'neoclide/coc.nvim'
 
-Plug 'davidhalter/jedi-vim'
 Plug 'godlygeek/tabular'
 Plug 'posva/vim-vue'
 
@@ -230,3 +233,8 @@ vnoremap <leader>c "+y
 map <leader>p "+p
 map <leader>v :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp -o %:r<CR>
 map <leader>r :<C-U>!./%:r<CR>
+
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
