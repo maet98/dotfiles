@@ -23,6 +23,7 @@ Plug 'morgsmccauley/vim-react-native-snippets'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+Plug 'preservim/nerdcommenter'
 Plug 'fuhrysteve/jedi-vim'
 Plug 'tomlion/vim-solidity'
 Plug 'junegunn/limelight.vim'
@@ -56,7 +57,6 @@ nmap <leader>j :wincmd j<CR>
 nmap <leader>k :wincmd k<CR>
 nmap <leader>l :wincmd l<CR>
 noremap <leader>a ggVG<CR>
-nmap <leader>n :Ntree<CR>
 
 if (has("termguicolors"))
  set termguicolors
@@ -234,7 +234,7 @@ map <leader>p "+p
 map <leader>v :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp -o %:r<CR>
 map <leader>r :<C-U>!./%:r<CR>
 
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
