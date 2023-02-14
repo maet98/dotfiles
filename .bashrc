@@ -149,12 +149,12 @@ export AWS_SECRET=cZnNhgajkVv4dAaQuYbfG+EwD7r9qffn/hQKTXjz
 
 #eval "$(starship init bash)"
 
-#if [ -z "$STARTEDFISH" ];
-#then
-#    export STARTEDFISH=1;
-#    exec fish;
-#    exit;
-#fi
+if [ -z "$STARTEDFISH" ];
+then
+    export STARTEDFISH=1;
+    exec fish;
+    exit;
+fi
 
 alias flutter='~/dev/flutter/bin/flutter'
 alias cf='cd /opt/coldfusion11/cfusion/'

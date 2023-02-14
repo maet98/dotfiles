@@ -44,7 +44,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec $terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -108,7 +108,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $terminal gnome-terminal
+set $terminal alacritty
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -179,16 +179,12 @@ bindsym $mod+r mode "resize"
 
 smart_gaps on
 
-gaps inner 4
-gaps outer 4
-
-bar {
-     status_command LC_ALL=C i3status
-}
+gaps inner 8
+gaps outer 8
 
 #Brightness
-bindsym XF86MonBrightnessUp exec xbright +100
-bindsym XF86MonBrightnessDown exec xbright -100
+bindsym XF86MonBrightnessUp exec xbright +1000
+bindsym XF86MonBrightnessDown exec xbright -1000
 
 #Personal Shortcuts
 
@@ -200,7 +196,7 @@ bindsym $mod+Shift+d exec ~/Apps/Discord/Discord
 
 
 #Screenshot
-bindsym $mod+Shift+p exec gnome-screenshot -i
+bindsym $mod+Shift+p exec flameshot gui
 
 #Minecraft Launcher
 bindsym $mod+Shift+m exec java -jar $HOME/Apps/SkaiaCraft_Launcher/minecraft.jar
@@ -212,7 +208,7 @@ bindsym $mod+Shift+w exec $terminal -e ranger
 exec --no-startup-id feh --randomize --bg-fill $HOME/Pictures/Wallpaper/*
 
 #i3lock
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec dm-tool switch-to-greeter
 
 #Media player controls
 bindsym $mod+p exec playerctl play-pause
@@ -226,3 +222,5 @@ bindsym $mod+Shift+v exec $terminal -e vim
 #arandr
 bindsym $mod+Control+1 exec bash $HOME/.screenlayout/normal.sh
 bindsym $mod+Control+2 exec bash $HOME/.screenlayout/badtv.sh
+
+exec always ~/.config/polybar/config.ini
