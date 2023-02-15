@@ -143,9 +143,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export AWS_ACCESS=ASIA2YTZN5J6B544RPNH
-export AWS_SECRET=cZnNhgajkVv4dAaQuYbfG+EwD7r9qffn/hQKTXjz
-
 
 #eval "$(starship init bash)"
 
