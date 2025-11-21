@@ -7,3 +7,4 @@ ln -f ./.xmobarrc ~/
 ln -f ./i3config ~/.config/i3/config
 ln -f ./terminteConfig ~/.config/termite/config
 ln -f ./hyprland.conf ~/.config/hypr/hyprland.conf
+ln -f ./.zshrc ~/.zshrc
