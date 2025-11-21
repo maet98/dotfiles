@@ -15,7 +15,7 @@ fi
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH:$HOME/go/bin:$HOME/Hubstaff"
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH:$HOME/go/bin"
 fi
 export PATH
 
@@ -116,25 +116,13 @@ export GOHOME=$HOME/go
 export VISUAL=vim
 export EDITOR=vim
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias OH="gnome-terminal pwd"
-# ~/.bashrc
-#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias CH='nmcli d wifi connect "Miguel" password "Cantalicio"'
-alias SS='ssh root@www.miguelestevez.xyz'
-alias spt="~/Repository/scripts/spt"
-
-
-alias tmux="TERM=screen-256color-bce tmux"
 
 PS1='[\u@\h \W]\$ '
 
-export LINGO_18_HOME="/home/miguelarch/lingo18"
-
-export PATH="/home/miguelarch/lingo18:$PATH"
 export HISTCONTROL=ignoredups
 
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -143,17 +131,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-
-#eval "$(starship init bash)"
-
-if [ -z "$STARTEDFISH" ];
-then
-    export STARTEDFISH=1;
-    exec fish;
-    exit;
-fi
-
 alias flutter='~/dev/flutter/bin/flutter'
-alias cf='cd /opt/coldfusion11/cfusion/'
 alias tmux="TERM=screen-256color-bce tmux"
-alias SCF="sudo /opt/coldfusion11/cfusion/bin/coldfusion start"
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
